@@ -13,17 +13,27 @@ const noMessages = [
 export default function Page() {
   const [forgiven, setForgiven] = useState(false)
   const [noMessage, setNoMessage] = useState('')
-  const [noPosition, setNoPosition] = useState({ top: 58, left: 67 })
+  const [noPosition, setNoPosition] = useState({ top: 70, left: 90})
 
-  function dodgeNo() {
-    const nextIndex = noMessages.indexOf(noMessage) + 1
-    setNoMessage(noMessages[nextIndex % noMessages.length])
-    setNoPosition({
-      top: 45 + ((nextIndex * 23) % 35),
-      left: 22 + ((nextIndex * 31) % 55),
-    })
-  }
+function dodgeNo() {
+  const nextIndex = noMessages.indexOf(noMessage) + 1
 
+  setNoMessage(noMessages[nextIndex % noMessages.length])
+
+  const positions = [
+    { top: 15, left: 55 },
+    { top: 15, left: 90 },
+    { top: 85, left: 55 },
+    { top: 85, left: 90 },
+    { top: 15, left: 75 },
+    { top: 85, left: 75 },
+    { top: 50, left: 90 },
+  ]
+
+  setNoPosition(
+    positions[nextIndex % positions.length]
+  )
+}
   if (forgiven) {
     return (
       <main className="apology-page celebration-page">
@@ -87,21 +97,32 @@ export default function Page() {
         <p className="body-copy">I&apos;m sorry I said I&apos;m taking some space from this. I didn&apos;t mean it. I messed up, and I hate that I hurt you. You mean the whole world to me, and I&apos;d really love the chance to make things right.</p>
         <p className="question">Will you forgive me?</p>
 
-        <div className="button-playground" aria-label="Forgiveness choices">
-          <button className="yes-button" type="button" onClick={() => setForgiven(true)}>
-            <Heart size={19} fill="currentColor" aria-hidden="true" /> Yes, I forgive you
-          </button>
-          <button
-            className="no-button"
-            type="button"
-            style={{ top: `${noPosition.top}%`, left: `${noPosition.left}%` }}
-            onPointerEnter={dodgeNo}
-            onFocus={dodgeNo}
-            onTouchStart={dodgeNo}
-            onClick={dodgeNo}
-            aria-label="No, I do not forgive you yet"
-          >No</button>
-        </div>
+    <div className="button-playground" aria-label="Forgiveness choices">
+  <button
+    className="yes-button"
+    type="button"
+    onClick={() => setForgiven(true)}
+  >
+    <Heart size={19} fill="currentColor" aria-hidden="true" />
+    Yes, I forgive you
+  </button>
+
+  <button
+    className="no-button"
+    type="button"
+    style={{
+      top: `${noPosition.top}%`,
+      left: `${noPosition.left}%`,
+    }}
+    onPointerEnter={dodgeNo}
+    onFocus={dodgeNo}
+    onTouchStart={dodgeNo}
+    onClick={dodgeNo}
+    aria-label="No, I do not forgive you yet"
+  >
+    No
+  </button>
+</div>
         <p className="no-message" aria-live="polite">{noMessage || 'The tiny button is feeling a little nervous.'}</p>
         <p className="footer-line">made with a very sorry heart <Heart size={13} fill="currentColor" aria-hidden="true" /></p>
       </section>

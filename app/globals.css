@@ -23,10 +23,23 @@
   --radius-lg: 1.5rem;
 }
 
-* { box-sizing: border-box; }
-html { min-width: 320px; }
-body { margin: 0; background: var(--background); color: var(--foreground); }
-button { font: inherit; }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+}
+
+button {
+  font: inherit;
+}
 
 .apology-page {
   position: relative;
@@ -36,59 +49,468 @@ button { font: inherit; }
   justify-content: center;
   overflow: hidden;
   padding: 28px 16px;
-  background: radial-gradient(circle at 50% 15%, #fffdfb 0, #fff6f3 42%, #f9e3e1 100%);
+  background: radial-gradient(
+    circle at 50% 15%,
+    #fffdfb 0,
+    #fff6f3 42%,
+    #f9e3e1 100%
+  );
   font-family: Georgia, 'Times New Roman', serif;
 }
+
 .apology-card {
   position: relative;
   z-index: 2;
   width: min(100%, 470px);
   padding: 26px 32px 24px;
-  border: 1px solid rgba(216,110,118,.25);
+  border: 1px solid rgba(216, 110, 118, 0.25);
   border-radius: 30px;
-  background: rgba(255,253,250,.84);
-  box-shadow: 0 24px 70px rgba(159, 75, 83, .15), 0 2px 5px rgba(159, 75, 83, .08);
+  background: rgba(255, 253, 250, 0.84);
+  box-shadow:
+    0 24px 70px rgba(159, 75, 83, 0.15),
+    0 2px 5px rgba(159, 75, 83, 0.08);
   text-align: center;
   backdrop-filter: blur(12px);
 }
-.top-mark, .footer-line, .promise-note { display: flex; align-items: center; justify-content: center; gap: 8px; }
-.top-mark { color: var(--rose); font: 600 11px/1.2 Arial, sans-serif; letter-spacing: .15em; text-transform: uppercase; }
-  .apology-sticker { display: block; width: 150px; height: 150px; object-fit: contain; margin: 22px auto 15px; border-radius: 42%; filter: drop-shadow(0 8px 10px rgba(216,110,118,.18)); transition: transform .25s ease; }
-  .apology-sticker:hover { transform: rotate(-3deg) scale(1.03); }
-.sticker-sprinkles { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
-.sprinkle-sticker { position: absolute; width: 76px; height: 76px; object-fit: contain; border-radius: 42%; filter: drop-shadow(0 8px 9px rgba(216,110,118,.16)); opacity: .9; animation: sticker-float 6s ease-in-out infinite; }
-.sprinkle-one { top: 8%; left: 15%; width: 68px; transform: rotate(-14deg); }
-.sprinkle-two { top: 17%; right: 13%; width: 94px; animation-delay: -1.5s; transform: rotate(12deg); }
-.sprinkle-three { bottom: 11%; left: 14%; width: 86px; animation-delay: -3s; transform: rotate(10deg); }
-.sprinkle-four { right: 16%; bottom: 7%; width: 58px; animation-delay: -4.5s; transform: rotate(-16deg); }
-@keyframes sticker-float { 50% { margin-top: -8px; } }
-.eyebrow { margin: 0 0 9px; color: #b26c72; font: 600 12px/1.2 Arial, sans-serif; letter-spacing: .22em; text-transform: uppercase; }
-h1 { margin: 0; color: #542d35; font-size: clamp(48px, 13vw, 70px); font-weight: 400; line-height: .93; letter-spacing: -.055em; }
-h1 span { color: var(--deep-rose); font-style: italic; }
-.rule { display: flex; align-items: center; gap: 10px; width: 72%; margin: 22px auto 18px; color: var(--rose); }
-.rule span { height: 1px; flex: 1; background: #eccbc8; }
-.body-copy { max-width: 330px; margin: 0 auto; color: #76545a; font-size: 16px; line-height: 1.65; }
-.question { margin: 19px 0 0; color: #633c43; font-size: 21px; font-style: italic; }
-.button-playground { position: relative; height: 105px; margin: 8px auto 0; max-width: 360px; }
-.yes-button, .no-button { border: 0; cursor: pointer; transition: transform .2s ease, box-shadow .2s ease; }
-.yes-button { position: absolute; top: 49%; left: 3%; display: inline-flex; align-items: center; gap: 9px; min-height: 52px; padding: 0 20px; border-radius: 999px; background: var(--rose); color: white; box-shadow: 0 8px 18px rgba(216,110,118,.29); font: 700 14px Arial, sans-serif; }
-.yes-button:hover, .yes-button:focus-visible { transform: translateY(-3px) scale(1.03); box-shadow: 0 12px 24px rgba(216,110,118,.36); }
-.no-button { position: absolute; min-width: 58px; min-height: 42px; padding: 0 15px; border: 1px solid #edc4c3; border-radius: 999px; background: #fff8f6; color: #a76b70; font: 600 13px Arial, sans-serif; transform: translate(-50%, -50%); }
-.no-button:hover, .no-button:focus-visible { outline: 2px solid #e6a6a5; outline-offset: 3px; }
-.no-message { min-height: 18px; margin: -2px 0 16px; color: #bd777b; font: 12px Arial, sans-serif; }
-.footer-line { color: #bc8587; font: 12px Arial, sans-serif; }
-.ambient { position: absolute; border-radius: 50%; filter: blur(2px); opacity: .5; }
-.ambient-one { width: 280px; height: 280px; top: -110px; right: -90px; background: #f5c4c0; }
-.ambient-two { width: 220px; height: 220px; bottom: -110px; left: -80px; background: #f3cbc4; }
-.floating-heart { position: absolute; z-index: 1; color: #e8a3a0; font-size: 54px; opacity: .35; animation: float 5s ease-in-out infinite; }
-.heart-one { top: 10%; left: 12%; }.heart-two { right: 12%; bottom: 12%; animation-delay: -2s; }.heart-three { right: 19%; top: 15%; font-size: 30px; animation-delay: -4s; }
-@keyframes float { 50% { transform: translateY(-12px) rotate(8deg); } }
-.celebration-page { background: radial-gradient(circle at 50% 35%, #fffdfb 0, #fce2df 48%, #f3caca 100%); }
-.celebration-card { padding-top: 42px; padding-bottom: 38px; }
-.icon-orbit { display: grid; place-items: center; width: 76px; height: 76px; margin: 0 auto 20px; border: 1px solid #f3c6c2; border-radius: 50%; background: #fff4f1; color: var(--rose); box-shadow: 0 0 0 10px rgba(255,255,255,.45); }
-.filled-heart { width: 38px; height: 38px; animation: heartbeat 1.6s ease-in-out infinite; }
-@keyframes heartbeat { 50% { transform: scale(1.13); } }
-.promise-note { width: fit-content; margin: 22px auto; padding: 10px 16px; border-radius: 999px; background: #fff0ed; color: #b05b63; font: 600 12px Arial, sans-serif; }
-.signature { margin: 26px 0 0; color: #9c6b6d; font-size: 14px; line-height: 1.65; font-style: italic; }.signature strong { color: #76464e; font-size: 15px; }.confetti { position: absolute; top: 15%; color: #d8757b; font-size: 24px; letter-spacing: 20px; opacity: .45; }
-@media (max-width: 480px) { .apology-card { padding: 23px 20px 20px; border-radius: 24px; } .button-playground { height: 112px; } .yes-button { left: 0; padding: 0 15px; } .no-button { min-height: 40px; } .heart-one { left: 3%; top: 7%; }.heart-two { right: 2%; bottom: 6%; } }
-@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+
+.top-mark,
+.footer-line,
+.promise-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.top-mark {
+  color: var(--rose);
+  font: 600 11px/1.2 Arial, sans-serif;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.apology-sticker {
+  display: block;
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin: 22px auto 15px;
+  border-radius: 42%;
+  filter: drop-shadow(0 8px 10px rgba(216, 110, 118, 0.18));
+  transition: transform 0.25s ease;
+}
+
+.apology-sticker:hover {
+  transform: rotate(-3deg) scale(1.03);
+}
+
+.sticker-sprinkles {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.sprinkle-sticker {
+  position: absolute;
+  width: 76px;
+  height: 76px;
+  object-fit: contain;
+  border-radius: 42%;
+  filter: drop-shadow(0 8px 9px rgba(216, 110, 118, 0.16));
+  opacity: 0.9;
+  animation: sticker-float 6s ease-in-out infinite;
+}
+
+.sprinkle-one {
+  top: 8%;
+  left: 15%;
+  width: 68px;
+  transform: rotate(-14deg);
+}
+
+.sprinkle-two {
+  top: 17%;
+  right: 13%;
+  width: 94px;
+  animation-delay: -1.5s;
+  transform: rotate(12deg);
+}
+
+.sprinkle-three {
+  bottom: 11%;
+  left: 14%;
+  width: 86px;
+  animation-delay: -3s;
+  transform: rotate(10deg);
+}
+
+.sprinkle-four {
+  right: 16%;
+  bottom: 7%;
+  width: 58px;
+  animation-delay: -4.5s;
+  transform: rotate(-16deg);
+}
+
+@keyframes sticker-float {
+  50% {
+    margin-top: -8px;
+  }
+}
+
+.eyebrow {
+  margin: 0 0 9px;
+  color: #b26c72;
+  font: 600 12px/1.2 Arial, sans-serif;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  color: #542d35;
+  font-size: clamp(48px, 13vw, 70px);
+  font-weight: 400;
+  line-height: 0.93;
+  letter-spacing: -0.055em;
+}
+
+h1 span {
+  color: var(--deep-rose);
+  font-style: italic;
+}
+
+.rule {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 72%;
+  margin: 22px auto 18px;
+  color: var(--rose);
+}
+
+.rule span {
+  height: 1px;
+  flex: 1;
+  background: #eccbc8;
+}
+
+.body-copy {
+  max-width: 330px;
+  margin: 0 auto;
+  color: #76545a;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.question {
+  margin: 19px 0 0;
+  color: #633c43;
+  font-size: 21px;
+  font-style: italic;
+}
+
+
+/* =========================================
+   BUTTON PLAYGROUND
+   ========================================= */
+
+.button-playground {
+  position: relative;
+  height: 120px;
+  margin: 8px auto 0;
+  max-width: 360px;
+}
+
+
+/* YES BUTTON */
+
+.yes-button {
+  position: absolute;
+  top: 50%;
+  left: 3%;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  min-height: 52px;
+  padding: 0 20px;
+
+  border: 0;
+  border-radius: 999px;
+
+  background: var(--rose);
+  color: white;
+
+  box-shadow: 0 8px 18px rgba(216, 110, 118, 0.29);
+
+  font: 700 14px Arial, sans-serif;
+
+  cursor: pointer;
+
+  transform: translateY(-50%);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+  z-index: 5;
+}
+
+.yes-button:hover,
+.yes-button:focus-visible {
+  transform: translateY(calc(-50% - 3px)) scale(1.03);
+
+  box-shadow:
+    0 12px 24px rgba(216, 110, 118, 0.36);
+}
+
+
+/* NO BUTTON */
+
+.no-button {
+  position: absolute;
+
+  min-width: 58px;
+  min-height: 42px;
+  padding: 0 15px;
+
+  border: 1px solid #edc4c3;
+  border-radius: 999px;
+
+  background: #fff8f6;
+  color: #a76b70;
+
+  font: 600 13px Arial, sans-serif;
+
+  cursor: pointer;
+
+  /*
+   * This makes the top/left coordinates represent
+   * the center of the button.
+   */
+  transform: translate(-50%, -50%);
+
+  transition:
+    top 0.25s ease,
+    left 0.25s ease,
+    transform 0.2s ease;
+
+  z-index: 10;
+}
+
+.no-button:hover,
+.no-button:focus-visible {
+  outline: 2px solid #e6a6a5;
+  outline-offset: 3px;
+}
+
+
+/* MESSAGE */
+
+.no-message {
+  min-height: 18px;
+  margin: -2px 0 16px;
+  color: #bd777b;
+  font: 12px Arial, sans-serif;
+}
+
+.footer-line {
+  color: #bc8587;
+  font: 12px Arial, sans-serif;
+}
+
+
+/* =========================================
+   BACKGROUND
+   ========================================= */
+
+.ambient {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(2px);
+  opacity: 0.5;
+}
+
+.ambient-one {
+  width: 280px;
+  height: 280px;
+  top: -110px;
+  right: -90px;
+  background: #f5c4c0;
+}
+
+.ambient-two {
+  width: 220px;
+  height: 220px;
+  bottom: -110px;
+  left: -80px;
+  background: #f3cbc4;
+}
+
+.floating-heart {
+  position: absolute;
+  z-index: 1;
+  color: #e8a3a0;
+  font-size: 54px;
+  opacity: 0.35;
+  animation: float 5s ease-in-out infinite;
+}
+
+.heart-one {
+  top: 10%;
+  left: 12%;
+}
+
+.heart-two {
+  right: 12%;
+  bottom: 12%;
+  animation-delay: -2s;
+}
+
+.heart-three {
+  right: 19%;
+  top: 15%;
+  font-size: 30px;
+  animation-delay: -4s;
+}
+
+@keyframes float {
+  50% {
+    transform: translateY(-12px) rotate(8deg);
+  }
+}
+
+
+/* =========================================
+   CELEBRATION PAGE
+   ========================================= */
+
+.celebration-page {
+  background: radial-gradient(
+    circle at 50% 35%,
+    #fffdfb 0,
+    #fce2df 48%,
+    #f3caca 100%
+  );
+}
+
+.celebration-card {
+  padding-top: 42px;
+  padding-bottom: 38px;
+}
+
+.icon-orbit {
+  display: grid;
+  place-items: center;
+
+  width: 76px;
+  height: 76px;
+
+  margin: 0 auto 20px;
+
+  border: 1px solid #f3c6c2;
+  border-radius: 50%;
+
+  background: #fff4f1;
+
+  color: var(--rose);
+
+  box-shadow:
+    0 0 0 10px rgba(255, 255, 255, 0.45);
+}
+
+.filled-heart {
+  width: 38px;
+  height: 38px;
+  animation: heartbeat 1.6s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  50% {
+    transform: scale(1.13);
+  }
+}
+
+.promise-note {
+  width: fit-content;
+  margin: 22px auto;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: #fff0ed;
+  color: #b05b63;
+  font: 600 12px Arial, sans-serif;
+}
+
+.signature {
+  margin: 26px 0 0;
+  color: #9c6b6d;
+  font-size: 14px;
+  line-height: 1.65;
+  font-style: italic;
+}
+
+.signature strong {
+  color: #76464e;
+  font-size: 15px;
+}
+
+.confetti {
+  position: absolute;
+  top: 15%;
+  color: #d8757b;
+  font-size: 24px;
+  letter-spacing: 20px;
+  opacity: 0.45;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 480px) {
+  .apology-card {
+    padding: 23px 20px 20px;
+    border-radius: 24px;
+  }
+
+  .button-playground {
+    height: 112px;
+  }
+
+  .yes-button {
+    left: 0;
+    padding: 0 15px;
+  }
+
+  .no-button {
+    min-height: 40px;
+  }
+
+  .heart-one {
+    left: 3%;
+    top: 7%;
+  }
+
+  .heart-two {
+    right: 2%;
+    bottom: 6%;
+  }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
