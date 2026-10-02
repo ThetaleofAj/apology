@@ -94,7 +94,7 @@ function dodgeNo() {
         <p className="eyebrow">dear favorite person</p>
         <h1 id="apology-title">I&apos;m really<br /><span>sorry.</span></h1>
         <div className="rule" aria-hidden="true"><span /><Heart size={14} fill="currentColor" /><span /></div>
-        <p className="body-copy">I&apos;m sorry I said I&apos;m taking some space from this. I didn&apos;t mean it. I was just upset, I did not mean it. You mean the whole world to me, and I&apos;d really love the chance to make things right.</p>
+        <p className="body-copy">I&apos;m sorry I said I&apos;m taking some space from this. I didn&apos;t mean it. I was just upset. You mean the whole world to me, and I&apos;d really love the chance to make things right.</p>
         <p className="question">Will you forgive me?</p>
 
     <div className="button-playground" aria-label="Forgiveness choices">
