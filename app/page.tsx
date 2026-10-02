@@ -95,7 +95,7 @@ function dodgeNo() {
         <h1 id="apology-title">I&apos;m really<br /><span>sorry.</span></h1>
         <div className="rule" aria-hidden="true"><span /><Heart size={14} fill="currentColor" /><span /></div>
         <p className="body-copy">I&apos;m sorry I said I&apos;m taking some space from this. I didn&apos;t mean it. I was just upset. You mean the whole world to me, and I&apos;d really love the chance to make things right.</p>
-        <p className="question">Will you forgive me?</p>
+        <p className="question">Will you take me back for the millionth time?</p>
 
     <div className="button-playground" aria-label="Forgiveness choices">
   <button
@@ -104,7 +104,7 @@ function dodgeNo() {
     onClick={() => setForgiven(true)}
   >
     <Heart size={19} fill="currentColor" aria-hidden="true" />
-    Yes, I forgive you
+    Yes, I take you back
   </button>
 
   <button
